@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GUA LAUMEHE — Digital Cave Experience | Wantopi, Buton Tengah</title>
+  <meta name="description" content="Jelajahi Gua Laumehe di Wantopi, Mawasangka Timur, Buton Tengah, Sulawesi Tenggara melalui digital storytelling, peta digital interaktif, dan eksplorasi virtual." />
+  <meta name="keywords" content="Gua Laumehe, Wantopi, Mawasangka Timur, Buton Tengah, Sulawesi Tenggara, wisata gua, digital tourism" />
+  <meta name="theme-color" content="#050b16" />
+  <meta property="og:title" content="GUA LAUMEHE — Digital Cave Experience" />
+  <meta property="og:description" content="Keindahan alam di balik stalaktit dan stalagmit. Wisata digital interaktif Gua Laumehe." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="images/hero.webp" />
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <link rel="preload" as="image" href="images/hero.webp" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Lewati ke konten utama</a>
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="nav" id="nav">
+    <div class="nav__inner container">
+      <a href="#home" class="logo" aria-label="LAUMEHE — kembali ke atas">
+        <span class="logo__mark" aria-hidden="true"></span>
+        <span class="logo__text">LAUMEHE</span>
+      </a>
+      <nav aria-label="Navigasi utama">
+        <ul class="nav__menu" id="navMenu">
+          <li><a href="#home" class="nav__link">Home</a></li>
+          <li><a href="#storytelling" class="nav__link">Storytelling</a></li>
+          <li><a href="#mapping" class="nav__link">Digital Mapping</a></li>
+          <li><a href="#explore" class="nav__link">Explore Cave</a></li>
+          <li><a href="#gallery" class="nav__link">Gallery</a></li>
+          <li><a href="#visit" class="nav__link">Visit</a></li>
+        </ul>
+      </nav>
+      <a href="#mapping" class="btn btn--primary btn--sm nav__cta">Start Exploring</a>
+      <button class="nav__toggle" id="navToggle" aria-label="Buka menu" aria-expanded="false" aria-controls="navMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="home" aria-labelledby="heroTitle">
+      <div class="hero__bg" aria-hidden="true">
+        <img src="images/hero.webp" alt="" width="1376" height="768" fetchpriority="high" />
+      </div>
+      <div class="hero__overlay" aria-hidden="true"></div>
+      <div class="hero__particles" id="particles" aria-hidden="true"></div>
+
+      <div class="hero__content container">
+        <p class="eyebrow reveal">Digital Cave Experience · Buton Tengah</p>
+        <h1 id="heroTitle" class="hero__title">
+          <span class="hero__kicker reveal">Discover the Hidden Beauty</span>
+          <span class="hero__name reveal">GUA LAUMEHE</span>
+        </h1>
+        <p class="hero__subtitle reveal">Keindahan Alam di Balik Stalaktit dan Stalagmit</p>
+        <p class="hero__desc reveal">Jelajahi keindahan, cerita, dan misteri alam Gua Laumehe melalui pengalaman wisata digital yang interaktif.</p>
+        <div class="hero__actions reveal">
+          <a href="#explore" class="btn btn--primary">Explore the Cave <span aria-hidden="true">→</span></a>
+          <a href="#storytelling" class="btn btn--ghost">Discover the Story</a>
+        </div>
+      </div>
+
+      <div class="hero__info container reveal">
+        <dl class="info-strip glass">
+          <div class="info-strip__item">
+            <dt>Lokasi</dt>
+            <dd>Wantopi, Mawasangka Timur</dd>
+          </div>
+          <div class="info-strip__item info-strip__item--wide">
+            <dt>Koordinat</dt>
+            <dd>JFG8+8GQ, Wantopi, Mawasangka Tim., Kabupaten Buton, Sulawesi Tenggara 93762</dd>
+          </div>
+          <div class="info-strip__item">
+            <dt>Kedalaman eksplorasi<sup>*</sup></dt>
+            <dd>± 86 meter</dd>
+          </div>
+          <div class="info-strip__item">
+            <dt>Jalur tracking<sup>*</sup></dt>
+            <dd>± 400 meter</dd>
+          </div>
+        </dl>
+        <p class="note">* Informasi awal yang perlu diverifikasi melalui survei lapangan.</p>
+      </div>
+
+      <a href="#storytelling" class="hero__scroll" aria-label="Gulir ke bagian Storytelling">
+        <span></span>
+      </a>
+    </section>
+
+    <!-- ================= STORYTELLING ================= -->
+    <section class="section story" id="storytelling" aria-labelledby="storyTitle">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow">01 — Digital Storytelling</p>
+          <h2 id="storyTitle" class="section__title">Kisah di Balik <span class="text-glow">Kegelapan</span></h2>
+          <p class="section__lead">Setiap gua menyimpan cerita. Bagian ini disiapkan untuk menghimpun narasi Gua Laumehe dari wawancara masyarakat dan sumber terpercaya.</p>
+          <p class="placeholder-badge"><span aria-hidden="true">✎</span> Konten naratif masih berupa placeholder — isi berdasarkan data yang terverifikasi.</p>
+        </header>
+
+        <div class="story__layout">
+          <aside class="timeline" aria-label="Bab cerita">
+            <ol class="timeline__list" id="timelineList"></ol>
+          </aside>
+          <div class="story__chapters" id="storyChapters"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= DIGITAL MAPPING ================= -->
+    <section class="section mapping" id="mapping" aria-labelledby="mappingTitle">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow">02 — Digital Mapping</p>
+          <h2 id="mappingTitle" class="section__title">Peta Digital <span class="text-glow">Interaktif</span></h2>
+          <p class="section__lead">Perbesar, perkecil, dan geser peta untuk mengenal bagian-bagian gua. Klik marker untuk melihat informasi setiap titik.</p>
+        </header>
+
+        <div class="mapping__layout reveal">
+          <div class="map-viewer glass" id="mapViewer">
+            <div class="map-viewer__toolbar" role="toolbar" aria-label="Kontrol peta">
+              <button class="icon-btn" id="zoomIn" aria-label="Perbesar">+</button>
+              <button class="icon-btn" id="zoomOut" aria-label="Perkecil">−</button>
+              <button class="icon-btn" id="zoomReset" aria-label="Atur ulang tampilan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg></button>
+              <button class="icon-btn" id="zoomFull" aria-label="Layar penuh"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button>
+            </div>
+            <div class="map-viewer__stage" id="mapStage" tabindex="0" aria-label="Gambar digital mapping. Gunakan tombol plus dan minus untuk zoom, panah untuk menggeser.">
+              <div class="map-viewer__canvas" id="mapCanvas">
+                <img id="mapImage" src="images/mapping-laumehe.jpg" alt="Gambar digital mapping Gua Laumehe beserta legenda dan ilustrasi bagian gua" draggable="false" />
+                <div class="map-viewer__markers" id="mapMarkers"></div>
+              </div>
+            </div>
+            <p class="map-viewer__hint"><span id="zoomLevel">100%</span> · Scroll / pinch untuk zoom · seret untuk menggeser</p>
+          </div>
+
+          <aside class="point-panel glass" id="pointPanel" aria-live="polite">
+            <div class="point-panel__empty" id="pointEmpty">
+              <p class="eyebrow">Pilih titik</p>
+              <h3>Klik salah satu marker</h3>
+              <p>Informasi titik, foto, nilai edukasi, dan panduan keselamatan akan tampil di sini.</p>
+              <ul class="legend" id="mapLegend"></ul>
+            </div>
+            <div class="point-panel__body" id="pointBody" hidden></div>
+          </aside>
+        </div>
+        <p class="note note--center">Posisi marker merupakan penanda visual pada gambar mapping, <strong>bukan</strong> koordinat GPS yang telah terverifikasi.</p>
+      </div>
+    </section>
+
+    <!-- ================= LOCATION MAP ================= -->
+    <section class="section location" id="location" aria-labelledby="locationTitle">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow">03 — Digital Map Location</p>
+          <h2 id="locationTitle" class="section__title">Lokasi <span class="text-glow">Geografis</span></h2>
+          <p class="section__lead">Titik lokasi utama Gua Laumehe berdasarkan gambar referensi. Koordinat bagian dalam gua tidak ditampilkan.</p>
+        </header>
+        <div class="location__layout reveal">
+          <div class="leaflet-wrap glass">
+            <div id="leafletMap" class="leaflet-map" role="region" aria-label="Peta lokasi Gua Laumehe"></div>
+          </div>
+          <div class="location__card glass">
+            <p class="eyebrow">Titik Utama</p>
+            <h3>Gua Laumehe</h3>
+            <p class="muted">Wantopi, Mawasangka Timur, Kabupaten Buton Tengah, Sulawesi Tenggara</p>
+            <dl class="coord">
+              <div><dt>Latitude</dt><dd id="latVal">-5.374252</dd></div>
+              <div><dt>Longitude</dt><dd id="lngVal">122.466040</dd></div>
+              <div><dt>Plus Code</dt><dd>JFG8+8GQ</dd></div>
+            </dl>
+            <div class="location__actions">
+              <a class="btn btn--primary" id="gmapsBtn" href="https://www.google.com/maps/search/?api=1&query=-5.374252,122.466040" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
+              <button class="btn btn--ghost" id="copyCoord" type="button">Salin Koordinat</button>
+            </div>
+            <p class="note" id="copyStatus" role="status"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= EXPLORE ================= -->
+    <section class="section explore" id="explore" aria-labelledby="exploreTitle">
+      <div class="container">
+        <header class="section__head section__head--row reveal">
+          <div>
+            <p class="eyebrow">04 — Explore the Cave</p>
+            <h2 id="exploreTitle" class="section__title">Katalog <span class="text-glow">Titik Eksplorasi</span></h2>
+          </div>
+          <p class="section__lead">Enam titik eksplorasi di sepanjang jalur gua. Klik kartu untuk membuka detail lokasi.</p>
+        </header>
+        <div class="explore__grid" id="exploreGrid"></div>
+        <p class="note note--center">Foto pada website ini adalah ilustrasi sementara. Ganti dengan foto asli Gua Laumehe di folder <code>images/</code>.</p>
+      </div>
+    </section>
+
+    <!-- ================= VIRTUAL TOUR ================= -->
+    <section class="section tour" id="tour" aria-labelledby="tourTitle">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow">05 — Virtual Tour</p>
+          <h2 id="tourTitle" class="section__title">Panorama <span class="text-glow">360°</span></h2>
+          <p class="section__lead">Ruang yang disiapkan untuk panorama 360 derajat atau video dokumentasi asli Gua Laumehe.</p>
+        </header>
+        <div class="tour__frame reveal" id="tourFrame">
+          <div class="tour__placeholder">
+            <div class="tour__ring" aria-hidden="true"><span>360°</span></div>
+            <h3>Virtual tour belum tersedia</h3>
+            <p>Dokumentasi panorama 360° dan video asli sedang dalam tahap pengumpulan. Konten akan ditampilkan setelah pengambilan gambar lapangan selesai.</p>
+            <ul class="tour__specs">
+              <li>Panorama: equirectangular JPG (2:1)</li>
+              <li>Video: MP4 / embed YouTube</li>
+            </ul>
+            <p class="note">Petunjuk pemasangan tersedia di README.md.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= GALLERY ================= -->
+    <section class="section gallery" id="gallery" aria-labelledby="galleryTitle">
+      <div class="container">
+        <header class="section__head section__head--row reveal">
+          <div>
+            <p class="eyebrow">06 — Gallery</p>
+            <h2 id="galleryTitle" class="section__title">Galeri <span class="text-glow">Visual</span></h2>
+          </div>
+          <div class="filters" role="group" aria-label="Filter galeri" id="galleryFilters">
+            <button class="chip is-active" data-filter="all" aria-pressed="true">Semua</button>
+            <button class="chip" data-filter="pintu" aria-pressed="false">Pintu Masuk</button>
+            <button class="chip" data-filter="formasi" aria-pressed="false">Formasi</button>
+            <button class="chip" data-filter="ruang" aria-pressed="false">Ruang Gua</button>
+            <button class="chip" data-filter="air" aria-pressed="false">Area Air</button>
+            <button class="chip" data-filter="aktivitas" aria-pressed="false">Aktivitas</button>
+          </div>
+        </header>
+        <div class="masonry" id="galleryGrid"></div>
+        <p class="note note--center">Semua gambar adalah ilustrasi sementara. Area air ditampilkan sebagai ilustrasi dan perlu dikonfirmasi.</p>
+      </div>
+    </section>
+
+    <!-- ================= VISIT ================= -->
+    <section class="section visit" id="visit" aria-labelledby="visitTitle">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow">07 — Visit Information</p>
+          <h2 id="visitTitle" class="section__title">Rencanakan <span class="text-glow">Kunjungan</span></h2>
+          <p class="section__lead">Informasi dasar untuk wisatawan. Detail akses, jam kunjungan, dan tarif perlu dikonfirmasi kepada pengelola atau pemerintah desa setempat.</p>
+        </header>
+        <div class="visit__grid">
+          <article class="visit-card glass reveal">
+            <span class="visit-card__icon" aria-hidden="true">◎</span>
+            <h3>Lokasi</h3>
+            <p>Desa Wantopi, Kecamatan Mawasangka Timur, Kabupaten Buton Tengah, Sulawesi Tenggara.</p>
+            <p class="muted">Plus Code: JFG8+8GQ</p>
+          </article>
+          <article class="visit-card glass reveal">
+            <span class="visit-card__icon" aria-hidden="true">⇄</span>
+            <h3>Akses</h3>
+            <p>Rute menuju lokasi dapat dilihat melalui Google Maps. Kondisi jalan dan moda transportasi terbaik perlu ditanyakan kepada warga setempat.</p>
+            <p class="muted placeholder-inline">[Placeholder: rute & estimasi perjalanan]</p>
+          </article>
+          <article class="visit-card glass reveal">
+            <span class="visit-card__icon" aria-hidden="true">☰</span>
+            <h3>Panduan Pengunjung</h3>
+            <ul class="checklist">
+              <li>Melapor kepada pengelola / aparat desa sebelum masuk.</li>
+              <li>Tidak menyentuh, mematahkan, atau mengambil formasi batuan.</li>
+              <li>Membawa kembali seluruh sampah.</li>
+              <li>Menghormati adat dan kearifan lokal masyarakat.</li>
+            </ul>
+          </article>
+          <article class="visit-card visit-card--alert glass reveal">
+            <span class="visit-card__icon" aria-hidden="true">!</span>
+            <h3>Keselamatan</h3>
+            <ul class="checklist">
+              <li>Eksplorasi gua <strong>wajib</strong> mengikuti arahan pemandu lokal.</li>
+              <li>Gunakan helm, senter/headlamp cadangan, dan alas kaki antiselip.</li>
+              <li>Hindari area yang belum dinyatakan aman.</li>
+              <li>Jangan masuk saat hujan deras atau kondisi cuaca buruk.</li>
+            </ul>
+          </article>
+        </div>
+        <div class="visit__cta glass reveal">
+          <div>
+            <h3>Siap menjelajah?</h3>
+            <p class="muted">Mulai dari peta digital, lalu rencanakan perjalanan bersama pemandu lokal.</p>
+          </div>
+          <div class="visit__cta-actions">
+            <a href="#mapping" class="btn btn--primary">Start Exploring</a>
+            <a href="#location" class="btn btn--ghost">Lihat Lokasi</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a href="#home" class="logo" aria-label="LAUMEHE — kembali ke atas">
+          <span class="logo__mark" aria-hidden="true"></span>
+          <span class="logo__text">LAUMEHE</span>
+        </a>
+        <p class="muted">Digital Cave Experience — media edukasi, promosi, dan pelestarian wisata alam Gua Laumehe.</p>
+      </div>
+      <nav aria-label="Navigasi footer">
+        <h3 class="footer__title">Navigasi</h3>
+        <ul class="footer__links">
+          <li><a href="#storytelling">Storytelling</a></li>
+          <li><a href="#mapping">Digital Mapping</a></li>
+          <li><a href="#explore">Explore Cave</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#visit">Visit</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h3 class="footer__title">Lokasi</h3>
+        <p class="muted">Wantopi, Mawasangka Timur<br />Kabupaten Buton Tengah<br />Sulawesi Tenggara 93762</p>
+      </div>
+      <div>
+        <h3 class="footer__title">Media Sosial</h3>
+        <ul class="socials">
+          <li><a href="#" aria-label="Instagram (tautan belum diatur)" data-placeholder-link>IG</a></li>
+          <li><a href="#" aria-label="YouTube (tautan belum diatur)" data-placeholder-link>YT</a></li>
+          <li><a href="#" aria-label="TikTok (tautan belum diatur)" data-placeholder-link>TT</a></li>
+          <li><a href="#" aria-label="Facebook (tautan belum diatur)" data-placeholder-link>FB</a></li>
+        </ul>
+        <p class="note">Ganti tautan media sosial di index.html.</p>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p>© <span id="year">2026</span> GUA LAUMEHE — Digital Cave Experience. Hak cipta dilindungi.</p>
+      <p class="muted">Peta © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> contributors</p>
+    </div>
+  </footer>
+
+  <!-- ================= MODAL ================= -->
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__dialog glass">
+      <button class="icon-btn modal__close" data-close aria-label="Tutup"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <!-- ================= LIGHTBOX ================= -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Pratinjau gambar" hidden>
+    <button class="icon-btn lightbox__close" id="lbClose" aria-label="Tutup"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+    <button class="icon-btn lightbox__nav lightbox__nav--prev" id="lbPrev" aria-label="Gambar sebelumnya">‹</button>
+    <figure class="lightbox__figure">
+      <img id="lbImg" src="" alt="" />
+      <figcaption id="lbCaption"></figcaption>
+    </figure>
+    <button class="icon-btn lightbox__nav lightbox__nav--next" id="lbNext" aria-label="Gambar berikutnya">›</button>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
+  <script src="script.js" defer></script>
+</body>
+</html>
